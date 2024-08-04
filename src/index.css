@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Righteous&display=swap');
+
+/* This one is for theme switch button: https://web.dev/patterns/theming/theme-switch/ */
+@import 'https://unpkg.com/open-props/easings.min.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth overflow-x-hidden;
+  }
+  #root {
+    @apply overflow-hidden min-h-screen flex flex-col cursor-default font-raleway transition-colors duration-300 ease-linear bg-main-reverse-0 dark:bg-main-0 selection:bg-opacity-80 selection:bg-accent-500 text-main-0 dark:text-main-reverse-0 dark:selection:text-main-0;
+  }
+}
+
+@layer components {
+  /* https://web.dev/patterns/theming/theme-switch/  */
+  #root {
+    --main-color: rgb(4 4 4);
+    --main-color-hover: rgb(64 64 64);
+    --accent-color: #e35efd;
+
+  }
+  .dark #root {
+    --main-color: rgb(245 245 245);
+    --main-color-hover: rgb(212 212 212);
+  }
+  .sun-and-moon > :is(.moon, .sun, .sun-beams) {
+    transform-origin: center;
+  }
+  .sun-and-moon > :is(.moon, .sun) {
+    fill: var(--main-color);
+  }
+  .theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
+    fill: var(--main-color-hover);
+  }
+  .sun-and-moon > .sun-beams {
+    stroke: var(--main-color);
+    stroke-width: 2px;
+  }
+  .theme-toggle:is(:hover, :focus-visible) .sun-and-moon > .sun-beams {
+    stroke: var(--main-color-hover);
+  }
+  [data-theme='dark'] .sun-and-moon > .sun {
+    transform: scale(1.75);
+  }
+  [data-theme='dark'] .sun-and-moon > .sun-beams {
+    opacity: 0;
+  }
+  [data-theme='dark'] .sun-and-moon > .moon > circle {
+    transform: translateX(-7px);
+  }
+  @supports (cx: 1) {
+    [data-theme='dark'] .sun-and-moon > .moon > circle {
+      cx: 17;
+      transform: translateX(0);
+    }
+  }
+  .sun-and-moon > .sun {
+    transition: transform 0.5s var(--ease-elastic-3);
+  }
+  .sun-and-moon > .sun-beams {
+    transition: transform 0.5s var(--ease-elastic-4), opacity 0.5s var(--ease-3);
+  }
+  .sun-and-moon .moon > circle {
+    transition: transform 0.25s var(--ease-out-5);
+  }
+  @supports (cx: 1) {
+    .sun-and-moon .moon > circle {
+      transition: cx 0.25s var(--ease-out-5);
+    }
+  }
+  [data-theme='dark'] .sun-and-moon > .sun {
+    transition-timing-function: var(--ease-3);
+    transition-duration: 0.25s;
+    transform: scale(1.75);
+  }
+  [data-theme='dark'] .sun-and-moon > .sun-beams {
+    transition-duration: 0.15s;
+    transform: rotateZ(-25deg);
+  }
+  [data-theme='dark'] .sun-and-moon > .moon > circle {
+    transition-duration: 0.5s;
+    transition-delay: 0.25s;
+  }
+
+  .animated-arrows span {
+    @apply w-2.5 h-2.5 border-b-[3px] border-r-[3px] border-main-0 dark:border-main-reverse-0 transition-colors duration-300 block rotate-45 animate-arrowAnimation;
+  }
+  .animated-arrows span:nth-child(2) {
+    @apply -mt-1.5;
+    animation-delay: -0.3s;
+  }
+
+  .skill-item {
+    @apply border-2 rounded-lg px-2 pt-0.5 pb-1 font-semibold transition-all duration-200 border-main-9 text-default dark:border-main-reverse-0
+    hover:border-accent-400 dark:hover:border-accent-600 hover:text-accent-600 dark:hover:text-accent-400 cursor-pointer !select-all;
+  }
+
+  .anchor-default {
+    @apply hover:text-accent-400 active:text-accent-300;
+    color: var(--accent-color); /* 使用 RGBA 紫色 */
+  }
+
+  .anchor-default:hover {
+    color: var(--accent-color); /* 确保悬停时使用 RGBA 紫色 */
+  }
+
+  .anchor-default {
+    @apply hover:text-accent-400 active:text-accent-300;
+    color: var(--accent-color); /* 默认使用 RGBA 紫色 */
+  }
+  .anchor-default:hover {
+    color: var(--accent-color); /* 确保悬停时使用 RGBA 紫色 */
+  }
+  .dark .anchor-default {
+    color: var(--dark-accent-color); /* 黑暗模式下使用 RGBA 紫色 */
+  }
+  .dark .anchor-default:hover {
+    color: var(--dark-accent-color); /* 确保黑暗模式下悬停时使用 RGBA 紫色 */
+  }
+
+  .project-info {
+    @apply space-y-3;
+  }
+  .project-info a {
+    @apply text-accent-300 hover:text-accent-500 active:text-accent-300;
+  }
+  .project-info h4 {
+    @apply font-bold pt-1;
+  }
+
+  .scroll-down-mouse {
+    @apply relative w-5 h-[30px] border-2 border-main-0 dark:border-main-reverse-0 transition-colors duration-300 rounded-2xl;
+  }
+  .scroll-down-mouse::before {
+    @apply absolute top-[20%] content-[''] left-1/2 w-1 h-1 -ml-0.5 bg-main-0 dark:bg-main-reverse-0 rounded-full;
+    -webkit-animation: scroll-down-animation 2s infinite;
+    animation: scroll-down-animation 2s infinite;
+  }
+  @keyframes scroll-down-animation {
+    0% {
+      top: 20%;
+      opacity: 0;
+    }
+    40% {
+      opacity: 1;
+    }
+    80% {
+      top: calc(80% - 4px);
+      opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  .spinner {
+    @apply select-none animate-hueRotate transition-default relative w-[150px] h-[150px] border-[3px] border-main-reverse-2 dark:border-main-5 rounded-full text-center leading-[150px] text-xl font-bold tracking-widest text-accent-500 uppercase shadow-xl;
+    text-shadow: 0 0 10px var(--accent-color);
+  }
+  .spinner:before {
+    @apply transition-default content-[''] absolute box-content -top-[3px] -left-[3px] w-full h-full border-[3px] border-accent-500 border-l-transparent border-b-transparent rounded-full;
+    animation: spinnerAnimation1 2s linear infinite;
+  }
+  .spinner span {
+    @apply block absolute left-1/2 w-1/2 h-1 origin-left;
+    top: calc(50% - 2px);
+    animation: spinnerAnimation2 2s linear infinite;
+  }
+  .spinner span:before {
+    @apply content-[''] absolute w-4 h-4 rounded-full bg-accent-500 -top-2 -right-2;
+    box-shadow: 0 0 20px var(--accent-color);
+  }
+  @keyframes spinnerAnimation1 {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes spinnerAnimation2 {
+    0% {
+      transform: rotate(45deg);
+    }
+    100% {
+      transform: rotate(405deg);
+    }
+  }
+
+  .radial-loader-bar {
+    @apply h-40 w-40 flex justify-center items-center text-2xl font-righteous relative;
+  }
+  .radial-loader-bar span {
+    @apply absolute top-0 left-0 w-full h-full rounded-full z-10;
+    mask-image: radial-gradient(transparent 57%, black calc(57% + 0.5px));
+    -webkit-mask-image: radial-gradient(transparent 57%, black calc(57% + 0.5px));
+  }
+}
+
+@layer utilities {
+  .main-layout {
+    @apply max-w-8xl mx-auto px-4 sm:px-8 md:px-10;
+  }
+
+  .transition-default {
+    @apply transition-all duration-300 ease-linear;
+  }
+  .text-default {
+    @apply text-main-0 dark:text-main-reverse-0;
+  }
+  .bg-default {
+    @apply bg-main-reverse-0 dark:bg-main-0;
+  }
+
+  .highlight-links a {
+    @apply text-accent-500 hover:text-accent-400 active:text-accent-300;
+  }
+
+  .gradient-text {
+    /* Need to set text color. Otherwise text opacity doesn't work */
+    @apply block bg-clip-text font-bold text-main-reverse-0 text-opacity-0 bg-[size:310%_310%] bg-main-0 dark:bg-main-reverse-0 transition-default;
+  }
+  .gradient-text-animation {
+    background-image: linear-gradient(
+      to right,
+      var(--main-color) 30%,
+      var(--accent-color) 50%,
+      var(--main-color) 70%
+    );
+    animation: rainbow 1.5s linear infinite;
+  }
+  @keyframes rainbow {
+    0% {
+      background-position: right;
+    }
+    100% {
+      background-position: left;
+    }
+  }
+
+  .text-stroke {
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: var(--main-color);
+  }
+  @media (min-width: 1024px) {
+    .text-stroke {
+      -webkit-text-stroke-width: 3px;
+    }
+  }
+
+  .hide-scrollbar {
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+  /* Hide scrollbar for chrome */
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .left-to-right-border {
+    @apply relative;
+  }
+  .left-to-right-border::after {
+    @apply content-[''] absolute bottom-0 left-0 w-0 border-b-2 border-b-main-0 dark:border-b-main-reverse-0 transition-all duration-200;
+  }
+  .left-to-right-border:hover::after {
+    @apply w-full;
+  }
+
+  .center-to-sides-border {
+    @apply relative;
+  }
+  .center-to-sides-border::after {
+    @apply content-[''] absolute bottom-0 left-1/2 w-0 border-b-2 border-b-main-0 dark:border-b-main-reverse-0 transition-all duration-200;
+  }
+  .center-to-sides-border::before {
+    @apply content-[''] absolute bottom-0 right-1/2 w-0 border-b-2 border-b-main-0 dark:border-b-main-reverse-0  transition-all duration-200;
+  }
+  .center-to-sides-border:hover::after {
+    @apply w-1/2;
+  }
+  .center-to-sides-border:hover::before {
+    @apply w-1/2;
+  }
+}

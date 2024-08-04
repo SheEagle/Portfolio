@@ -1,0 +1,160 @@
+{
+  "AboutMe": "About Me",
+  "welcome": "Welcome to our app",
+  "HeroCanvas": {
+    "Serene": "Serene",
+    "Wang": "Wang"
+  },
+  "Navigation": {
+    "Hero": "Hero",
+    "Me": "Me",
+    "Projects": "Projects",
+    "Skill": "Skill",
+    "Interest": "Interest",
+    "Contact": "Contact"
+  },
+  "ProjectsPopup": {
+    "title": "My Projects",
+    "instructionPanSwipe": "Pan, swipe or use arrows to navigate",
+    "instructionTap": "Click on a project tablet to learn more about the project",
+    "closingHint": "Click anywhere to close"
+  },
+  "Contact": {
+    "first": "Let's Work",
+    "second": "Together",
+    "name": "Serene Wang",
+    "resume": "Resume",
+    "check": "Check out my"
+  },
+  "Skills": {
+    "skills": "Skills"
+  },
+  "Interest": {
+    "interest": "Interest",
+    "categories": {
+      "Music": {
+        "name": "Music",
+        "interests": {
+          "Singing": "Singing 🎤",
+          "Guzheng": "Guzheng 🎼",
+          "Post Rock": "Post Rock 🎸🎹"
+        }
+      },
+      "Photography": {
+        "name": "Photography",
+        "interests": {
+          "Dream Core": "Dream Core 🎪🎠",
+          "Weird Core": "Weird Core 🎭🎃",
+          "Street Photography": "Street Photography 📸",
+          "Landscape": "Landscape 🌋"
+        }
+      },
+      "Sports": {
+        "name": "Sports",
+        "interests": {
+          "Fitness": "Fitness 💪",
+          "Swimming": "Swimming 🏊‍♀️",
+          "Skating": "Skating 🏂"
+        }
+      },
+      "Others": {
+        "name": "Others",
+        "interests": {
+          "Urbex": "Urbex 🌉🏰",
+          "Vintage Hunting": "Vintage Hunting 🚪💿",
+          "Scripts Writing": "Scripts Writing 📃🎥",
+          "Styling": "Styling 💃🌠"
+        }
+      }
+    }
+  },
+  "About": {
+    "About me": "About me",
+    "Skills": "Full List of Skills",
+    "Projects": "Projects",
+    "Scroll": "Scroll text"
+  },
+  "Hero": {
+    "title": "Professional Full Stack Web Developer",
+    "subtitle": "Developing Creative and Innovative Web Applications.",
+    "callToAction": "READY FOR HIRE!",
+    "drag": "Drag to rotate",
+    "cam": "the camera",
+    "scrollHint": "Scroll down to learn more",
+    "professional": "Professional",
+    "full": "Full Stack",
+    "developer": "Web Developer"
+  },
+  "ProjectPage": {
+    "repo": "Repository",
+    "next": "Next Project:",
+    "more": "Learn more",
+    "tech": "Technologies used",
+    "what": "What I've built and have learned",
+    "thoughts": "My general thoughts"
+  },
+  "Projects": {
+    "The Code": {
+      "name": "The Code",
+      "type": "STEM Knowledge Sharing Forum",
+      "description": [
+        "The Code features core community functionalities such as posting, editing, commenting, searching, liking, collecting, and AI-driven STEM knowledge Q&A, offering a comprehensive user interaction experience.",
+        "Technical highlights include using Redis for high-frequency operation caching of likes and collections, with scheduled synchronization to the MySQL database, effectively reducing database load.",
+        "The forum's post list is optimized for handling a large number of database requests through short-term caching with Redis, enhancing the system's response speed.",
+        "User avatar storage is implemented using the MinIO object storage service, simplifying the storage process and improving management efficiency and data reliability.",
+        "The integrated use of the Snowflake algorithm, Logback for log management, and a front-end and back-end separation architecture ensures high availability and maintainability of the system."
+      ],
+      "essay": {
+        "intro": "The creation of The Code has been a journey of continuous exploration and learning, where I applied existing knowledge and acquired many new technologies.",
+        "para1": "In the early stages of the project, I envisioned a platform that would allow women in the STEM fields to make their voices heard and engage in dialogue. I wanted this platform to be not only a hub for knowledge but also a warm community where everyone feels respected and heard. During the design and implementation process, I paid special attention to user experience and interface intuitiveness, spending a considerable amount of time on sketching to ensure that the final interface is both aesthetically pleasing and easy to use.",
+        "para2": "To enhance the system's performance and stability, I designed an efficient data caching and synchronization strategy, utilizing modern technical tools like Redis and MinIO to optimize data flow and storage management.",
+        "para3": "The integration of the AI Q&A function marks our first step in exploring the intelligentization of the community. It enriches user interaction methods and provides a new dimension for knowledge sharing.",
+        "conclusion": "The Code is the realization of my vision to create an open, inclusive, and intelligent STEM community. I believe that through this platform, we can inspire more women to reach their potential in the field of technology and together drive social progress and development."
+      }
+    },
+    "Axis": {
+      "name": "Axis",
+      "type": "Server Monitoring and Management System",
+      "description": [
+        "Axis has designed and implemented an innovative distributed monitoring system architecture, completing the full process development from client data collection to server processing and data visualization.",
+        "The project integrates InfluxDB as a time-series database, storing and optimizing the monitoring data processing workflow, significantly enhancing the efficiency of handling large-scale monitoring data.",
+        "Real-time SSH remote control functionality based on WebSocket has been implemented, allowing users to conveniently perform server management tasks through the front-end interface, enhancing the system's operability and user experience.",
+        "A multi-level caching strategy for host information has been designed and implemented, using Redis to optimize high-frequency operations and rate limiting, effectively improving system performance and security."
+      ],
+      "essay": {
+        "intro": "Developing the Axis project has been an invaluable learning journey. It not only allowed me to apply the visualization techniques I learned during my training but also broadened my technical horizons.",
+        "para1": "In this project, I utilized the echarts visualization technology I learned from previous training to present complex server data in an intuitive chart format, which not only enhanced the user experience but also deepened my understanding of data visualization.",
+        "para2": "Through the development of Axis, I expanded my knowledge in hardware and networking. I learned how to monitor and interpret the server's hardware status, as well as key information like network traffic, which is crucial for my understanding of the system's performance.",
+        "para3": "I gained a deeper understanding of deploying on Linux systems. From configuring the environment to installing and running services, each step requires precise operation, a process that gave me a deeper appreciation for the stability and reliability of backend services.",
+        "para4": "Axis, as a program with multiple components, provided me with valuable experience in development. I learned how to coordinate the work of each component to ensure they work harmoniously to serve the users.",
+        "conclusion": "The development process of the Axis project was a journey filled with challenges and growth. I not only improved my technical skills but also gained a deeper understanding of developing and maintaining a complex system."
+      }
+    },
+    "SmartNest": {
+      "name": "SmartNest",
+      "type": "Smart Home and Care System for Left-behind Elders and Children",
+      "description": [
+        "Developed an integrated smart home and care system utilizing IoT and machine learning technologies to enhance the quality of life for left-behind elders and children.",
+        "The system can monitor the home environment in real-time, such as temperature, humidity, and lighting, and control home devices automatically or manually to provide a comfortable living environment.",
+        "Introduced a digital human conversation system that offers emotional companionship and support through voice recognition and sentiment analysis technologies.",
+        "Adopted multimodal sentiment analysis technology to capture users' emotional changes during conversations with the digital human and generate emotional reports, helping parents to understand the emotional states of family members in a timely manner."
+      ],
+      "essay": {
+        "intro": "In the process of developing the SmartNest project, I have come to appreciate the significance of combining innovation with practical application. It has been a journey of continuous exploration and learning of new technologies.",
+        "para1": "At the outset of the project, I had only a vague vision: to create a smart home system that could serve the needs of left-behind elders and children, addressing the practical issues they face in their daily lives. I was acutely aware that to achieve this goal, it was essential to integrate cutting-edge technology with human care.",
+        "para2": "During the design phase, I started with the real needs of the users, conducting research and interviews to understand the true needs of the target user group. Based on this, I utilized IoT technology to build an environmental monitoring module and developed intelligent control functions with machine learning algorithms, achieving automated management of home devices.",
+        "para3": "To provide a more intimate companionship, I introduced a digital human conversation system. By integrating voice recognition and natural language processing technologies, the system can communicate smoothly with users and analyze emotions based on the conversation content, generating emotional reports. This feature not only brings warmth to the left-behind elders and children but also provides peace of mind for their distant families.",
+        "conclusion": "The development of the SmartNest project has led me to deeply understand that the advancement of technology should aim to serve humanity and improve life. In the future, I look forward to applying more innovative technologies to the field of smart homes, contributing to the creation of a better living environment."
+      }
+    }
+  },
+  "Introduction": {
+    "intro": "Hello there, my name is Serene Wang, and I'm a student majoring in Software Engineering with an emphasis on full-stack development and AI. Here is my",
+    "and": "and",
+    "para1": "I have a deep interest in full-stack development and have gained practical experience in current popular technology stacks such as Java, Python, React, and Vue. Not only have I mastered the fundamentals of software development, but I've also delved into machine learning and deep learning. Currently, I'm actively exploring the latest technologies in the field of artificial intelligence, particularly emerging technologies like large language models (LLM). I'm eager to continuously learn and aspire to keep pace with technological advancements, always staying at the forefront of the industry.",
+    "para2": "Regarding personal interests, music is an indispensable part of my life. I particularly enjoy music in less common languages and instrumental music, which often provide me with unique inspiration. Additionally, I'm intrigued by niche cultures, such as dreamcore and weirdcore subculture art forms. These distinctive modes of expression consistently stimulate my creative thinking.",
+    "para3": "I'm also passionate about urban exploration, with a particular fondness for abandoned buildings. In these forgotten corners, I often sense the power of time and traces of human activity. These experiences provide me with rich material for reflection and creation.",
+    "para4": "Creative writing is another significant area of interest for me. I'm enthusiastic about novel and script writing, and I'm currently preparing my first creative project, 'Spectrum,' which tells the story of four female prisoners after a failed prison break. Through this project, I hope to explore some profound themes.",
+    "para5": "As a software engineering student, I look forward to combining my technical skills with my creative interests to produce works that are both practical and innovative in my future career. I believe it is this dual love for technology and art that will drive me to continually progress in my professional field while maintaining enthusiasm and curiosity about life."
+  }
+}
